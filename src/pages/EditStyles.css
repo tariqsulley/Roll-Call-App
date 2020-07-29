@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+}
+.EditHome{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.EditMap{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-radius: 5px;
+    box-shadow: 20px 20px 20px 10px;
+    border: 1px solid;
+}
+
+.EditCardImg:hover{
+    transition: ease-in-out 2s;
+    transform: scale(1.3);
+}
+
+.EditPageBtns{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.textfield{
+    margin: 10px;
+}

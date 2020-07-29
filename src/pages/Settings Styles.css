@@ -1,0 +1,86 @@
+.SettingsBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background: linear-gradient(40deg,rgb(3, 224, 224),rgb(126, 112, 128));*/height: 100vh;
+    
+}
+
+#Header{
+    text-align: center;
+}
+
+.SettingsForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 100px;
+    box-shadow: 11px 9px 10px 10px;  
+}
+
+.FormInput{
+    margin: 20px;   
+}
+
+#TF1{
+    margin-right:20px;
+    margin-top: 15px;
+}
+
+.Control_btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Apply_btn{
+width: 200px;
+height: 40px;
+border-radius: 3px;
+border:none;
+border-radius: 9px;
+padding: 0 0 0 0;
+width: 500px;
+font-weight: bold;
+background-color: rgb(38, 251, 38);
+box-shadow: 0 5px rgb(35, 160, 35);
+}
+
+.Apply_btn:hover{
+    background-color: rgb(38, 184, 38);
+}
+
+.Apply_btn:active{
+    box-shadow: 0 2px rgb(35, 160, 35);
+    transform: translate(0,2px);
+}
+
+.LogOut_btn{
+    width: 500px;
+    height: 40px;
+    border:none;
+    font-weight: bold;
+    padding: 2px 2px 0px 40px;
+    border-radius: 9px;
+    padding: 0 0 0 0;
+    background-color: rgb(251, 38, 38);
+    box-shadow: 0 5px rgb(225, 30, 27);
+    margin-top: 50px;
+}
+
+.LogOut_btn:hover{
+    background-color: rgb(210, 22, 21);
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(42, 42, 42);
+}
