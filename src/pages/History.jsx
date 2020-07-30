@@ -22,7 +22,7 @@ const styles = theme => ({
 )*/
 
 
-const Page2 = props => {
+const HistoryPage = props => {
   return (
     <div>
       <div>
@@ -34,4 +34,4 @@ const Page2 = props => {
 
 
 
-export default withStyles(styles)(Page2);
+export default withStyles(styles)(HistoryPage);
