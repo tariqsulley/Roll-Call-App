@@ -79,9 +79,7 @@ class MaterialTableDemo extends Component {
        
       ],
       title: '',
-      data: [
-       
-      ],
+      data: [],
     }
     this.Search = this.Search.bind(this);
   }
