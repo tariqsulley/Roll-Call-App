@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import { withStyles } from "@material-ui/core/styles";
 import MaterialTable from 'material-table';
-import Image from '../images/Presec.png';
+import Image from './images/Presec.png';
 import './EditStyles.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -10,7 +10,6 @@ import ArrowBackSharpIcon from '@material-ui/icons/ArrowBackSharp';
 import SaveIcon from '@material-ui/icons/Save';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {lightGreen} from '@material-ui/core/colors';
-
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
