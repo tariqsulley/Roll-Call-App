@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import { withStyles } from "@material-ui/core/styles";
 import MaterialTable from 'material-table';
-import Image from './Presec.png';
+import Image from '../images/Presec.png';
 import './EditStyles.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
