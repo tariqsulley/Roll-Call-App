@@ -189,7 +189,7 @@ function Butt (props){
         this.state = {
             homeview: true,
             clas: '',
-            house: ''
+            house: '',
      }
         this.toggleView1 = this.toggleView1.bind(this)
         this.ChangeClass = this.ChangeClass.bind(this)
@@ -248,9 +248,9 @@ class App extends Component {
             remaining: 0,
             progress: true,
             present: [],
-            pre: []
+            pre: [],
+            
         };
-
         this.onDismiss = this.onDismiss.bind(this)
         this.onSearchChange = this.onSearchChange.bind(this)
         this.toggleView2 = this.toggleView2.bind(this)
@@ -261,7 +261,10 @@ class App extends Component {
     }
     componentDidMount() {
         const creds = JSON.parse(localStorage.getItem('credentials'))
-
+        const Values = localStorage.getItem('completed')
+        this.setState({
+            data: JSON.parse(Values)
+        })
         /*
         if(creds.class === "100"){
           this.setState({
@@ -390,14 +393,24 @@ class App extends Component {
             pre: pr
         })
     }
+    
+    componentDidUpdate() {
+        localStorage.setItem('completed', JSON.stringify(this.state.data))
+    }
 
     save(){
-         x.push([this.state.present, this.state.list])
+        x.push([this.state.present, this.state.list])
         console.log(x)
-        const completed_rollcall = localStorage.setItem('completed', JSON.stringify(x))
-//Material Table.js Line 542 pprops.columns.findIndex is not a function
-
-    }
+        this.setState((prevState) => {
+            const data = [...prevState.data];
+            console.log(data)
+            data.push(x);
+            console.log(data)
+            return { ...prevState, data };
+          })
+      
+       }
+    //Material Table.js Line 542 pprops.columns.findIndex is not a function   
         render() {
             const { searchTerm, list,empty,present } = this.state;
             if(this.state.progress){
@@ -426,9 +439,10 @@ class App extends Component {
                 </div>
                 <div className="OptionsBottom">
                 <div className="OptionsBottomRefresh">
-                <MyButton onClick={this.reload} startIcon={<RefreshIcon/>} iD="refresh">
+                <Button variant="contained"
+                color="primary" onClick={this.reload} startIcon={<RefreshIcon/>} iD="refresh">
                 Refresh
-                </MyButton>
+                </Button>
                 </div>
                 <div className="OptionsBottomDone">
                 <ThemeProvider theme={theme}>
@@ -500,3 +514,4 @@ class App extends Component {
 }
 
 export default HomePage;
+
