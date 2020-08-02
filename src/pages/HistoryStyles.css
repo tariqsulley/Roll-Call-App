@@ -1,0 +1,16 @@
+.HistoryBody{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.Completed_RollCall{
+ border: 5px solid;
+ border-radius: 5px;
+ box-shadow: 6px 6px 16px 10px rgb(217,210,200,0.51);
+ margin: 30px 100px;
+}
+.Absent_Present{
+    border: 2px solid;
+    margin: 10px;
+}
+
