@@ -377,7 +377,7 @@ class App extends Component {
 
         
         //Recursion and decrementing depth by 1 is used for each level of depth.
-        //Array.prototype.reduce() and Array.prototype.concat() is used to merge 
+        //reduce() and concat() are used to merge 
         //arrays. Base case, depth equal to 1 stops recursion.
         //  u_list is flattened to remove multiple arrays 
         const flatten = (arr, depth = 1) =>
@@ -410,7 +410,6 @@ class App extends Component {
           })
       
        }
-    //Material Table.js Line 542 pprops.columns.findIndex is not a function   
         render() {
             const { searchTerm, list,empty,present } = this.state;
             if(this.state.progress){
