@@ -5,3 +5,7 @@ Screenshots of the application(Building still in progress so some UI features ma
 
 Login Page:
 ![LoginPage](https://i.imgur.com/MLKFqHK.png)
+
+Drawer:
+[SideBar](https://i.imgur.com/wfqVF0d.png)
+
