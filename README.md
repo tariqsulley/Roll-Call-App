@@ -1,6 +1,6 @@
 An App which digitizes the traditional way of conducting roll calls in Ghanaian Secondary Schools with books and pens.
 
-Screenshots of the application(Building still in progress so some UI features may not be final)
+Screenshots of the application(Development is still in progress so some UI features may not be final)
 
 
 
