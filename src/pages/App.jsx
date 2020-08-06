@@ -249,6 +249,7 @@ class App extends Component {
             progress: true,
             present: [],
             pre: [],
+            DateNTime: []
             
         };
         this.onDismiss = this.onDismiss.bind(this)
@@ -262,9 +263,20 @@ class App extends Component {
     componentDidMount() {
         const creds = JSON.parse(localStorage.getItem('credentials'))
         const Values = localStorage.getItem('completed')
+        const listlength = list.filter(student => student.class[0] === creds.class[0])
         this.setState({
             data: JSON.parse(Values)
         })
+        if(creds.class !== "1"){
+        this.setState({
+            remaining: listlength.length
+        })}
+        else{
+            this.setState({
+                remaining: list.length
+            })
+        }
+    
         /*
         if(creds.class === "100"){
           this.setState({
@@ -299,6 +311,7 @@ class App extends Component {
             return this.setState({list: []})
         }
     }
+
     click = () =>{
         this.props.parentMethod();
         u_list = []
@@ -312,11 +325,12 @@ class App extends Component {
 
     reload(){
         const creds = JSON.parse(localStorage.getItem('credentials'))
+        const listlength = list.filter(student => student.class[0] === creds.class[0])
         if(creds.class !== "1"){
         u_list = []
         this.setState({
             list: list.filter(student => student.class[0] === creds.class[0]),
-            remaining: 0,
+            remaining: listlength.length,
             present: []
         })
     }
@@ -324,7 +338,7 @@ class App extends Component {
         u_list = []
         this.setState({
             list: list,
-            remaining: 0,
+            remaining: list.length,
             present: []
         })
     }
@@ -377,7 +391,7 @@ class App extends Component {
 
         
         //Recursion and decrementing depth by 1 is used for each level of depth.
-        //reduce() and concat() are used to merge 
+        //Array.prototype.reduce() and Array.prototype.concat() is used to merge 
         //arrays. Base case, depth equal to 1 stops recursion.
         //  u_list is flattened to remove multiple arrays 
         const flatten = (arr, depth = 1) =>
@@ -396,8 +410,10 @@ class App extends Component {
     
     componentDidUpdate() {
         localStorage.setItem('completed', JSON.stringify(this.state.data))
+       
     }
 
+    /*PrevState is not defined when data is first being pushed into Completed_Calls */
     save(){
         x.push([this.state.present, this.state.list])
         console.log(x)
@@ -410,6 +426,7 @@ class App extends Component {
           })
       
        }
+    //Material Table.js Line 542 pprops.columns.findIndex is not a function   
         render() {
             const { searchTerm, list,empty,present } = this.state;
             if(this.state.progress){
@@ -513,4 +530,3 @@ class App extends Component {
 }
 
 export default HomePage;
-
