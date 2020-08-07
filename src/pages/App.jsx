@@ -260,12 +260,16 @@ class App extends Component {
         this.save = this.save.bind(this)
     
     }
+
     componentDidMount() {
         const creds = JSON.parse(localStorage.getItem('credentials'))
         const Values = localStorage.getItem('completed')
         const listlength = list.filter(student => student.class[0] === creds.class[0])
         this.setState({
             data: JSON.parse(Values)
+        })
+        this.setState({
+            DateNTime: new Array ( {'Date': JSON.parse(localStorage.getItem('DateNTime'))})
         })
         if(creds.class !== "1"){
         this.setState({
@@ -312,7 +316,7 @@ class App extends Component {
         }
     }
 
-    click = () =>{
+    click = (props) =>{
         this.props.parentMethod();
         u_list = []
     }
@@ -334,6 +338,7 @@ class App extends Component {
             present: []
         })
     }
+
     else{
         u_list = []
         this.setState({
@@ -415,7 +420,7 @@ class App extends Component {
 
     /*PrevState is not defined when data is first being pushed into Completed_Calls */
     save(){
-        x.push([this.state.present, this.state.list])
+        x.push([this.state.present, this.state.list, this.state.DateNTime])
         console.log(x)
         this.setState((prevState) => {
             const data = [...prevState.data];
@@ -424,7 +429,9 @@ class App extends Component {
             console.log(data)
             return { ...prevState, data };
           })
-      
+      this.setState({
+          progress: !this.state.progress
+      })
        }
     //Material Table.js Line 542 pprops.columns.findIndex is not a function   
         render() {
@@ -454,12 +461,14 @@ class App extends Component {
                 </div>
                 </div>
                 <div className="OptionsBottom">
+
                 <div className="OptionsBottomRefresh">
                 <Button variant="contained"
                 color="primary" onClick={this.reload} startIcon={<RefreshIcon/>} iD="refresh">
                 Refresh
                 </Button>
                 </div>
+
                 <div className="OptionsBottomDone">
                 <ThemeProvider theme={theme}>
                 <Button variant="contained" color="primary" onClick={this.toggleView2} iD= "RollCallDone"
@@ -468,12 +477,14 @@ class App extends Component {
                 </Button>
                 </ThemeProvider>
                 </div>
+
                 <div className="OptionsBottomUndo">
                 <Button variant="contained" color="primary" onClick={this.undo} iD= "Done"
                 startIcon={<UndoIcon/>}>
                 Undo
                 </Button>
                 </div>
+                
                 </div>
                 <div className="form">
                     {/*<Search 
