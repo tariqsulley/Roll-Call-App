@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: center;
     /*background: linear-gradient(40deg,rgb(3, 224, 224),rgb(126, 112, 128));*/height: 100vh;
-    
 }
 
 #Header{
@@ -51,6 +50,7 @@ box-shadow: 0 5px rgb(35, 160, 35);
 }
 
 .Apply_btn:hover{
+    transition: .4s ease-in-out;
     background-color: rgb(38, 184, 38);
 }
 
@@ -73,6 +73,7 @@ box-shadow: 0 5px rgb(35, 160, 35);
 }
 
 .LogOut_btn:hover{
+    transition: .4s ease-in-out;
     background-color: rgb(210, 22, 21);
 }
 
