@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import { withStyles } from "@material-ui/core/styles";
 import MaterialTable from 'material-table';
-import Image from './images/Presec.png';
+import Image from '../images/Presec.png';
 import './EditStyles.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -10,6 +10,7 @@ import ArrowBackSharpIcon from '@material-ui/icons/ArrowBackSharp';
 import SaveIcon from '@material-ui/icons/Save';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {lightGreen} from '@material-ui/core/colors';
+
 import { forwardRef } from 'react';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
@@ -44,10 +45,7 @@ const theme = createMuiTheme({
 //var random_names = []
 const HouseName = localStorage.getItem('title')
 
-/*
-const names_length = JSON.parse(localStorage.getItem(('names')))
-const remaining = names_length.length - 3
-*/
+
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -79,7 +77,9 @@ class MaterialTableDemo extends Component {
        
       ],
       title: '',
-      data: [],
+      data: [
+       
+      ],
     }
     this.Search = this.Search.bind(this);
   }
@@ -169,15 +169,7 @@ class MaterialTableDemo extends Component {
       </div>
     );
   }}
-/*
-  function CardNames(){
-    return(
-      useEffect( () => {
-        for(var i =0; i<df.length; i++){
-          names.push((df[i].name))}
-      }, [])
-    )
-  }*/
+
 
 
 class Page extends Component{
@@ -228,42 +220,13 @@ class Page extends Component{
   localStorage.setItem('class',JSON.stringify(form))
  } 
 
-  componentDidMount() {
-    /*setTimeout(()=>{
-      this.setState({color:'blue'})
-    },3000)
-    for (var i = 0; i<3; i++){
-      random_names.push(names[Math.floor(Math.random() * names.length)])
-      
-    }*/
-  }
   
   render(){
   if(this.state.changeview ){
     return (
     <div className = "EditHome">
-    {/*    <h1 style = {{color:this.state.color}}> Edit Page Here</h1>
-    */}
      <div className = "EditMap">
-     {/*
-     {random_names.map(name =>(
-     <EditCard name = {name.name}/>
-     ))}
-     <p>and {remaining} others</p>* 
-     Reorder names in ascending/desceding order by surname
-     Use regex to detect white space in two word names and 
-     apply reordering to [1th] name. For names,
-     that have more than two words, apply reordering to the
-     last name.
-     IN SETTINGS APPLY FUNCTIONALITY TO DELETE ALL FORM 3s.
-     ALSO, ADD FUNCTION TO UPGRADE FORM 1s AND 2s TO NEXT GRADE.
-     AND FUNCTION TO DEGRADE
-     ALSO ADD FUNCTIONALITY TO EXPORT COMPLETED ROLL CALL IN HISTORY
-     TO A MOBILE PHONE.
-     WHEN UNDO IS DONE, DISPLAY ALERT FOR ABOUT 2s SAYING..EX: Added Prince Asiedu
-     TECHNOVATION WORLD CHALLENGE (Nigerian Girls Win $10,000 by developing app)
-     Screenshot_20190102-224555.png*/
-     }
+
      <h1> {HouseName}</h1>
      <img src = {Image} className= "EditCardImg" alt = "Presec_Logo"/>
      <Button variant="contained"startIcon ={<EditIcon/>} color ="primary" 
