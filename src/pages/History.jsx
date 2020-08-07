@@ -30,6 +30,7 @@ class HistoryPage extends Component {
       })
       console.log(this.state.history)
     }
+
   view(stud){
    alert('Hi' + stud.name)
   }
@@ -47,13 +48,16 @@ class HistoryPage extends Component {
                 {obj.map((stud) => {
                 return(
                   <div className ="Absent_Present" >
+
                     {stud.map((fin) =>
                       <div className="Names"> 
-                      <HistoryCard name={fin.name} Class = {fin.class}/>  
+                      <h1> {fin.Date}</h1> 
+                  
+                      <HistoryCard name={fin.name} Class = {fin.class}/> 
                       </div> 
                     )}
                 <p onClick ={this.view}>Present: {stud.length}</p>
-                <button onClick={()=>alert("Hello ")} > View </button>
+                {/*<button onClick={()=>alert(stud.map(name => name.name))} > View </button>*/}
                   </div>
                  )})}
                  
