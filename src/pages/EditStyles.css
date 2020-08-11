@@ -25,8 +25,7 @@ h1{
     border-radius: 10px;
     box-shadow: 20px 20px 20px 10px;
     border: 5px solid rgb(0,0,0,0.20);
-    box-shadow: 6px 6px 16px 10px rgb(217,210,200,0.51);
-    
+    box-shadow: 6px 6px 16px 10px rgb(217,210,200,0.51);   
 }
 
 .EditCardImg:hover{
