@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+//import ReactNotification from './react-notifications-component'
+//import { store } from 'react-notifications-component';
+//import 'react-notifications-component/dist/theme.css'
 import './index.css';
-import { styled } from '@material-ui/core/styles';
+//import { styled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -9,11 +12,15 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 import UndoIcon from '@material-ui/icons/Undo';
 import SaveIcon from '@material-ui/icons/Save';
 import DoneIcon from '@material-ui/icons/Done';
+//import StartIcon from '@material-ui/icons/'
 import {lightGreen } from '@material-ui/core/colors';
 import MaterialUIPickers from './picker.jsx';
 import NativeSelects from './Select.jsx';
 
-/*const ColorButton = withStyles((theme) => ({
+
+/*
+Eniyah Rana(150K on IG)
+const ColorButton = withStyles((theme) => ({
     root: {
       color: theme.palette.getContrastText(purple[500]),
       backgroundColor: purple[500],
@@ -34,11 +41,11 @@ const theme = createMuiTheme({
       primary: lightGreen,
     },
   });
+
 const pr = [];
-/*const undo_List = [];*/
 var u_list = [];
 const u_list_present = [];
-const undo_list = []
+/*
 const MyButton = styled(Button)({
   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   border: 0,
@@ -47,11 +54,11 @@ const MyButton = styled(Button)({
   color: 'white',
   height: 48,
   padding: '0 30px',
-});
+}) ; */
 
 const list =  JSON.parse(localStorage.getItem('names'))
 const x = []
-const creds = JSON.parse(localStorage.getItem('credentials'))
+//const creds = JSON.parse(localStorage.getItem('credentials'))
 
 // Checks if the current value in the input field is present 
 // in item(the database)....Matches name and class */
@@ -59,30 +66,10 @@ const isSearched = searchTerm => item =>
 item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
 item.class.toLowerCase().includes(searchTerm.toLowerCase());
 
-/*
-function Search(props) {
-    const { value, onChange, children } = props;
-    return (
-    <form>
-    {children} <input
-    type="text" placeholder="Search for student"
-    iD="formSearch"
-    value={value}
-    onChange={onChange} />
-    </form> 
-    )
-}
-*/
 function Table(props){
     const { list, pattern, onDismiss } = props;
     return (
-        <div className="table">  
-        {/*
-        <div className="table-head">
-        <header id="h1">  Name </header>
-        <header id="h2"> House </header>
-        <header id="h3"> Class</header>
-        </div> */}  
+    <div className="table">      
     {list.filter(isSearched(pattern)).map(item =>
     <div key={item.tableData.id} className="table-row">
     <span style={{ width: '40%' }}>
@@ -95,28 +82,20 @@ function Table(props){
     {item.class}
     </span>
     <span style={{ width: '10%' }}>
-    <Butt onClick={() => onDismiss(item.tableData.id)} className="button-inline">
+    <PresentButton onClick={() => onDismiss(item.tableData.id)} className="button-inline">
     Present
-    </Butt>
+    </PresentButton>
     </span>
     </div>
     )} 
     </div> 
-    );
-   
+    );  
 }
 
 function TablePresent(props){
     const { list, pattern } = props;
     return (
-        <div className="table-present">  
-        {/* 
-        <div className="table-head">
-        <header id="h1">  Name </header>
-        <header id="h2"> House </header>
-        <header id="h3"> Class</header>
-        </div>  
-        */}
+    <div className="table-present">  
     {list.filter(isSearched(pattern)).map(item =>
     <div key={item.tableData.id} className="table-row">
     <span style={{ width: '40%' }}>
@@ -137,14 +116,7 @@ function TablePresent(props){
 function TableAbsent(props){
     const { list, pattern } = props;
     return (
-        <div className="Table-absent">  
-        {/* 
-        <div className="table-head">
-        <header id="h1">  Name </header>
-        <header id="h2"> House </header>
-        <header id="h3"> Class</header>
-        </div>  
-        */}
+    <div className="Table-absent">  
     {list.filter(isSearched(pattern)).map(item =>
     <div key={item.tableData.id} className="table-row">
     <span style={{ width: '40%' }}>
@@ -159,24 +131,21 @@ function TableAbsent(props){
     </div>
     )} 
     </div> 
-    );
-   
+    );  
 }
 
-function Butt (props){
-            const {
-            onClick,
-            className,
-            children,} = props;
-            return (
+
+function PresentButton (props){
+        const {onClick,className,children} = props;
+        return(
             <button
             onClick={onClick}
             className={className}
             type="button">
             {children}
             </button>
-            );
-        }
+        );
+    }
 
   const Empty = (props) => {
     return <h1 id = "ErrorHead"> Sorry No Match Found :(</h1>
@@ -222,7 +191,9 @@ function Butt (props){
             <div className="HomeOptions">
             <MaterialUIPickers/>
             <NativeSelects />
-            <button onClick={this.toggleView1} className="StartBtn"> StartRollCall </button>
+            <Button color = "primary" variant = {list === null || list.length === 0 
+            || list.some(arr => arr.name === undefined) ? "disabled":"contained" } 
+            onClick={this.toggleView1} className = "StartBtn"> Start RollCall </Button>
             </div>
             </div>
         );
@@ -230,7 +201,7 @@ function Butt (props){
     
         else{
             return(
-                <App parentMethod ={this.toggleView1}/> 
+                <App parentMethod = {this.toggleView1}/> 
             );
         }
     }
@@ -249,9 +220,9 @@ class App extends Component {
             progress: true,
             present: [],
             pre: [],
-            DateNTime: []
-            
+            DateNTime: []   
         };
+
         this.onDismiss = this.onDismiss.bind(this)
         this.onSearchChange = this.onSearchChange.bind(this)
         this.toggleView2 = this.toggleView2.bind(this)
@@ -265,38 +236,26 @@ class App extends Component {
         const creds = JSON.parse(localStorage.getItem('credentials'))
         const Values = localStorage.getItem('completed')
         const listlength = list.filter(student => student.class[0] === creds.class[0])
+        
         this.setState({
             data: JSON.parse(Values)
         })
+
         this.setState({
-            DateNTime: new Array ( {'Date': JSON.parse(localStorage.getItem('DateNTime'))})
+            DateNTime: new Array ({'Date': JSON.parse(localStorage.getItem('DateNTime'))})
         })
+
         if(creds.class !== "1"){
         this.setState({
             remaining: listlength.length
         })}
+
         else{
             this.setState({
                 remaining: list.length
             })
         }
     
-        /*
-        if(creds.class === "100"){
-          this.setState({
-              list: list.filter(student => student.class[0] === "1")
-          })
-        }
-        else if(creds.class === "200"){
-            this.setState({
-                list: list.filter(student => student.class[0] === "2")
-            })
-        }
-        else if(creds.class ==="300"){
-            this.setState({
-                list: list.filter(student => student[0] === "3")
-            })
-        }*/
         switch(creds.class){
 
             case "100":
@@ -311,7 +270,7 @@ class App extends Component {
             case "1":
             return this.setState({list: list})
             
-            case "":
+            default: 
             return this.setState({list: []})
         }
     }
@@ -346,7 +305,7 @@ class App extends Component {
             remaining: list.length,
             present: []
         })
-    }
+      }
     }
 
     onSearchChange(event) {
@@ -375,7 +334,7 @@ class App extends Component {
             else{
                 alert("WARNING!!!...There are currently no students left to undo")
             }
-            }
+        }
 
     // Removes a selected student from the current list in
     //(item.table.Data.id !== id)...list is henceforth updated
@@ -383,7 +342,7 @@ class App extends Component {
     onDismiss(id) {
         const isNotId = item => item.tableData.id !== id;
         const updatedList = this.state.list.filter(isNotId);
-        const creds = JSON.parse(localStorage.getItem('credentials'))
+        //const creds = JSON.parse(localStorage.getItem('credentials'))
         u_list_present.push(updatedList);
         this.setState({ list: updatedList });
         this.setState({remaining: this.state.list.length - 1 })
@@ -414,25 +373,31 @@ class App extends Component {
     }
     
     componentDidUpdate() {
-        localStorage.setItem('completed', JSON.stringify(this.state.data))
-       
+        localStorage.setItem('completed', JSON.stringify(this.state.data)) 
     }
 
-    /*PrevState is not defined when data is first being pushed into Completed_Calls */
     save(){
         x.push([this.state.present, this.state.list, this.state.DateNTime])
-        console.log(x)
+        const complete = JSON.parse(localStorage.getItem('completed'))
+
+        if(complete !== null){
         this.setState((prevState) => {
             const data = [...prevState.data];
-            console.log(data)
             data.push(x);
-            console.log(data)
             return { ...prevState, data };
-          })
+          })}
+
+        else{
+            this.setState( () => {
+                const data = [];
+                data.push(x)
+                return {data}
+            })
+        }
       this.setState({
           progress: !this.state.progress
       })
-       }
+    }
     //Material Table.js Line 542 pprops.columns.findIndex is not a function   
         render() {
             const { searchTerm, list,empty,present } = this.state;
@@ -457,7 +422,7 @@ class App extends Component {
 
                 <div className="OptionsTopSearch">
                 <TextField id="outlined-basic" label="Search" variant="outlined"
-                value = {searchTerm} onChange={this.onSearchChange}/>
+                value = {searchTerm} onChange= {this.onSearchChange} />
                 </div>
                 </div>
                 <div className="OptionsBottom">
@@ -471,7 +436,7 @@ class App extends Component {
 
                 <div className="OptionsBottomDone">
                 <ThemeProvider theme={theme}>
-                <Button variant="contained" color="primary" onClick={this.toggleView2} iD= "RollCallDone"
+                <Button variant={list.length === 0 ? "disabled":"contained"} color="primary" onClick={this.toggleView2} iD= "RollCallDone"
                 startIcon={<DoneIcon/>}>
                 Done
                 </Button>
@@ -486,26 +451,22 @@ class App extends Component {
                 </div>
                 
                 </div>
-                <div className="form">
-                    {/*<Search 
-                    value={searchTerm} 
-                    onChange={this.onSearchChange}
-                    ref={(node) => { this.input = node; }}>
-                    Search
-                    </Search>*/}
-                    </div>
-                    </div>
-                    <Table
-                    list={list}
-                    pattern={searchTerm}
-                    onDismiss={this.onDismiss}/>
-                    { empty === 1 ? <Empty/>: null }
+                </div>
+                
+                <Table
+                list={list}
+                pattern={searchTerm}
+                onDismiss={this.onDismiss}/>
+                { empty === 1 ? <Empty/>: null }
+                
                 </div> 
              );
         }
         else{  
             return(
                 <div className="done">
+
+                <div className ="BackBtn">
                 <Button
                 variant="contained"
                 color="secondary"
@@ -513,11 +474,13 @@ class App extends Component {
                 startIcon={<ArrowBackSharpIcon />}>
                  Back
                 </Button>
-            
+                </div>
+
                 <div className="status_header">
                 <p> Number of students present: {this.state.present.length}</p>
                 <p> Number of students absent: {this.state.remaining} </p>
                 </div>
+
                 <div className = "student_background">
                 <div className = "student_status">
                 <TablePresent
@@ -529,11 +492,13 @@ class App extends Component {
                     pattern={searchTerm}/>
                 </div>
                 </div>
+
                 <div className="btnContainer">
                 <Button variant="contained" 
                 color = "primary" id="Savebtn"
                 startIcon = {<SaveIcon/>} onClick={this.save}> Save </Button>
                 </div>
+
                 </div>                
             );
         }
