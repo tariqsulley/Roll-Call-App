@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import './HistoryStyles.css';
 import HistoryCard from './HistoryCard.jsx';
@@ -11,6 +10,7 @@ const styles = theme => ({
     display: "none"
   }
 });
+ 
 
 const Completed_Calls = JSON.parse(localStorage.getItem('completed'))
 
@@ -57,7 +57,7 @@ class HistoryPage extends Component {
                       </div> 
                     )}
                 <p onClick ={this.view}>Present: {stud.length}</p>
-                {/*<button onClick={()=>alert(stud.map(name => name.name))} > View </button>*/}
+                <button onClick={()=>alert(stud.map(name => name.name))} > View </button>
                   </div>
                  )})}
                  
