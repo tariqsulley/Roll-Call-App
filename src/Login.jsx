@@ -53,16 +53,16 @@ class Login extends Component{
         }
         else{
             alert("Incorrect Details")
-
         }
     }
     
     render(){
         if(this.state.login){
         return(
-	<div class="LoginBody">
-    <div class="LoginBackground">
-        <div class="LoginWrap">
+	        <div class="LoginBody">
+            <div class="LoginBackground">
+            <div class="LoginWrap">
+            
             <div class="LoginImg">
                 <img src={Image} alt="IMG" className="Presec_Logo"></img>
             </div>
@@ -95,9 +95,10 @@ class Login extends Component{
                 </div>
 
             </form>
-        </div>
-    </div>
-</div>
+
+            </div>
+            </div>
+            </div>
         )
     }
     else{
@@ -105,6 +106,7 @@ class Login extends Component{
             <Appbar/>
         )
     }
-    }
+  }
 }
+
 export default Login;
