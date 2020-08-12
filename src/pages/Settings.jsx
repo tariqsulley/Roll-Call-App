@@ -37,8 +37,9 @@ render(){
   return(
     <div className ="Background">
     <div className ="SettingsBody">
-    <div className = "SettingsForm">
     
+    <div className = "SettingsForm">
+    {/* 
     <div className="FormInput">
     <h2 iD="Header">Change Username  </h2>
     <TextField iD = "TF1" variant ="outlined" label ="Existing Username"/>
@@ -57,8 +58,10 @@ render(){
     <button  className="Apply_btn"> Apply Changes </button>
     <button className="LogOut_btn" onClick={this.LogOut}> Log Out </button>
     </div>
+    */}
     <div className = "Actions">
-      <h1> Students Upgrade</h1>
+      <h1 iD="type"> Students Upgrade</h1>
+      <h1 iD = "Acc"> Account</h1>
       <p> Please do not click this button unless the form 3's have completed</p>
       <button> Move Students</button>
     </div>
