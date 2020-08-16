@@ -1,4 +1,8 @@
 A desktop app which digitizes the traditional way of conducting roll calls in Ghanaian Secondary Schools with books and pens.
+The app comes in two forms, there is the roll call app for houses in secondary schools and there's the club roll call for clubs in secondary schools.
+
+The only difference between the two is that, in the club roll call app, addtional features are added like calender graphs, number of times each student has been present at
+a club meeting, and proportions of students in the club based on the houses they are in.
 
 Screenshots of the application(Development is still in progress so some UI features may not be final)
 
