@@ -12,4 +12,6 @@ Screenshots of the application(Development is still in progress so some UI featu
 
 ![Completed](https://i.imgur.com/xR1XtSl.png)
 
-![Edit](https://i.imgur.com/NRK2cqJ.png)
+![Edit](https://i.imgur.com/O8gNCO9.png)
+
+![Settings](https://i.imgur.com/jOrQQdQ.png)
