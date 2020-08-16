@@ -1,8 +1,10 @@
-import React, {useEffect} from "react";
+import React, {useEffect,useState} from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Chart from "react-google-charts";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import PresentList from './PresentList.jsx';
+import TextField from '@material-ui/core/TextField';
+import Snackbars from './InternetConnectionNeeded.jsx'
 import './HomeStyles.css'
 const styles = theme => ({
   button: {
@@ -29,6 +31,22 @@ const data = []
 var Present_Students = []
 
 const Home = ()=> {
+  const [search,Setsearch] = useState('')
+  const [names,Setname] = useState([])
+  const [origNames, Setorig] = useState([])
+
+  const SearchItem = (event)=>{
+    Setsearch(event.target.value)
+
+   const Searchfilter =
+    names.filter(student =>{
+        return student.name.toLowerCase().includes(search.toLowerCase())
+    })
+    Setname(Searchfilter)   
+     if(search === ''){
+      Setname(origNames)
+    } 
+  }
 
   const GetDates = ()=>{
     const zip = (arr1, arr2) => arr1.map((k, i) => [k, arr2[i]]);
@@ -71,19 +89,27 @@ const Home = ()=> {
      Present_Students = [...result]
 });
 */
-var result = Object.values(df.reduce((acc, {name}) => {
+
+let result = Object.values(df.reduce((acc, {name}) => {
   if (acc[name] === undefined)
       acc[name] = {name: name, count: 1};
   else
       acc[name].count++;
   return acc;
-}))
+},{}));
+
 Present_Students = [...result]
+Setname([...result])
+Setorig([...result])
+
 }
 
   useEffect(() => {
     GetDates();
+    
   }, []);
+
+
 
   const click = ()=>{
     alert(Present_Students)
@@ -91,6 +117,7 @@ Present_Students = [...result]
 
   return (
     <div>
+
       <div>
         <h1> Home Page Here</h1>
         <button onClick={click}> Display Data</button>
@@ -101,20 +128,33 @@ Present_Students = [...result]
       </div>
       
       <div>
-      <div>
+
+      <div className="AttendanceBox">
+      <div className = "NumOfCalls">
         Number of Roll Calls: {history.length}
       </div>
-        {Present_Students.map(student=>(
+      <div className="TextField">
+        <TextField label="Search" variant="outlined" value ={search} onChange={SearchItem}/>
+      </div>
+      <div className="PresentList">
+        {names.map(student=>(
           <PresentList name = {student.name} times = {student.count}/>
         ))}
       </div>
+      </div>
 
-      <div style={{ display: 'flex', maxWidth: 900}}>
+      </div>
+      <div className ="ChartContainer">
+      <div className="ChartEntrance">
+         <Snackbars/>
+      </div>
+
+      <div className="ClassPieChart" style={{ display: 'flex', maxWidth: 900}}>
       <Chart
         width={'500px'}
         height={'300px'}
         chartType="PieChart"
-        loader={<div><CircularProgress/></div>}
+        loader={<div className = "ProgressCircle"><CircularProgress/></div>}
         data={[
           ['Grade', 'Number Of Students'],
           ['Form 3 ', form_3s],
@@ -126,12 +166,13 @@ Present_Students = [...result]
         }}
       />
       </div>
+     
       <div className="Timeline">    
        <Chart
         width={1000}
         height={500}
         chartType="Calendar"
-        loader={<div>Loading Chart</div>}
+        loader={<div className="ProgressCircle"><CircularProgress/></div>}
         data={[
           [{ type: 'date', id: 'Date' }, { type: 'number', id: 'Won/Loss' }],
           ...data.map(arr=> [arr[0], arr[1]])
@@ -141,6 +182,7 @@ Present_Students = [...result]
         }}
         rootProps={{ 'data-testid': '1' }}
       />
+      </div>
       </div>
  
       </div>
