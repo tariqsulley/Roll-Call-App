@@ -9,15 +9,36 @@
     text-align: center;
 }
 
+/*#type{
+    overflow: hidden;
+    margin: 0 auto;
+    border-right: 1px solid;
+    animation: typing 2.6s steps(30,end) infinite;
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+   
+}*/
+
+#type:hover{
+    background: rgba(126, 126, 128, 0.698)
+}
+
 .SettingsForm{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;  
-    border: 2px solid;
+    border: 5px solid  rgb(0,0,0,0.20);
     border-radius: 5px;
     padding: 100px;
-    box-shadow: 11px 9px 10px 10px;  
+    box-shadow: 6px 6px 16px 10px rgb(217,210,200,0.51);   
+
 }
 
 .FormInput{
@@ -37,16 +58,16 @@
 }
 
 .Apply_btn{
-width: 200px;
-height: 40px;
-border-radius: 3px;
-border:none;
-border-radius: 9px;
-padding: 0 0 0 0;
-width: 500px;
-font-weight: bold;
-background-color: rgb(38, 251, 38);
-box-shadow: 0 5px rgb(35, 160, 35);
+    width: 200px;
+    height: 40px;
+    border-radius: 3px;
+    border:none;
+    border-radius: 9px;
+    padding: 0 0 0 0;
+    width: 500px;
+    font-weight: bold;
+    background-color: rgb(38, 251, 38);
+    box-shadow: 0 5px rgb(35, 160, 35);
 }
 
 .Apply_btn:hover{
@@ -75,6 +96,58 @@ box-shadow: 0 5px rgb(35, 160, 35);
 .LogOut_btn:hover{
     transition: .4s ease-in-out;
     background-color: rgb(210, 22, 21);
+}
+
+.AccountBack{
+    margin-top: 20px;
+}
+
+.LogOutBox{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(100, 100, 100);
+    border-radius: 10px;
+    box-shadow: -18px 14px 16px 2px grey;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.StudentViewBack{
+    margin-top: 10px;
+}
+
+.StudentViewBody{
+    display: flex;
+    flex-direction: column;
+}
+
+.ResetCalls{
+    margin-bottom: 20px;
+}
+
+.StudentBtn{
+    margin-left: 20px;
+}
+
+.LogOutText{
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin-top: 1px;
+}
+
+.ExitBtn{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.HelpBack{
+    margin-top: 10px;
+}
+
+.HelpInfo{
+    margin-top: 20px;
 }
 
 ::-webkit-scrollbar{
