@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-//import ReactNotification from './react-notifications-component'
-//import { store } from 'react-notifications-component';
-//import 'react-notifications-component/dist/theme.css'
 import './index.css';
 //import { styled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -12,29 +9,11 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 import UndoIcon from '@material-ui/icons/Undo';
 import SaveIcon from '@material-ui/icons/Save';
 import DoneIcon from '@material-ui/icons/Done';
-//import StartIcon from '@material-ui/icons/'
+import PlayArrow from '@material-ui/icons/PlayArrow';
 import {lightGreen } from '@material-ui/core/colors';
 import MaterialUIPickers from './picker.jsx';
 import NativeSelects from './Select.jsx';
 
-
-/*
-Eniyah Rana(150K on IG)
-const ColorButton = withStyles((theme) => ({
-    root: {
-      color: theme.palette.getContrastText(purple[500]),
-      backgroundColor: purple[500],
-      '&:hover': {
-        backgroundColor: purple[700],
-      },
-    },
-  }))(Button);*/
-  
-  /*onst useStyles = makeStyles((theme) => ({
-    margin: {
-      margin: theme.spacing(1),
-    },
-  }));*/
   
 const theme = createMuiTheme({
     palette: {
@@ -45,17 +24,6 @@ const theme = createMuiTheme({
 const pr = [];
 var u_list = [];
 const u_list_present = [];
-/*
-const MyButton = styled(Button)({
-  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  border: 0,
-  borderRadius: 3,
-  boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  color: 'white',
-  height: 48,
-  padding: '0 30px',
-}) ; */
-
 const list =  JSON.parse(localStorage.getItem('names'))
 const x = []
 //const creds = JSON.parse(localStorage.getItem('credentials'))
@@ -192,8 +160,8 @@ function PresentButton (props){
             <MaterialUIPickers/>
             <NativeSelects />
             <Button color = "primary" variant = {list === null || list.length === 0 
-            || list.some(arr => arr.name === undefined) ? "disabled":"contained" } 
-            onClick={this.toggleView1} className = "StartBtn"> Start RollCall </Button>
+            || list.some(arr => arr.name === undefined) ? "disabled":"contained" }  
+            onClick={this.toggleView1} startIcon={<PlayArrow/>} className = "StartBtn"> Start RollCall </Button>
             </div>
             </div>
         );
