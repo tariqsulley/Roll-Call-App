@@ -19,3 +19,7 @@ Screenshots of the application(Development is still in progress so some UI featu
 ![Edit](https://i.imgur.com/O8gNCO9.png)
 
 ![Settings](https://i.imgur.com/jOrQQdQ.png)
+
+![Pie Chart](https://i.imgur.com/wtjhYE8.png)
+
+![Calendar](https://i.imgur.com/yz16YZf.png)
