@@ -10,7 +10,7 @@ Screenshots of the application(Development is still in progress so some UI featu
 
 ![RollCall](https://i.imgur.com/6czrRCN.png)
 
-![Completed](https://i.imgur.com/xR1XtSl.png)
+![Completed](https://i.imgur.com/gMFoV24.png)
 
 ![Edit](https://i.imgur.com/O8gNCO9.png)
 
