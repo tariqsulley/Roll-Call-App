@@ -4,7 +4,7 @@
   "private": true,
   "main": "src/start.jsx",
   "build": {
-    "appId": "some.id.ofyours",
+    "appId": "Tariq's App",
     "directories": {
       "buildResources": "assets"
     },
@@ -16,15 +16,16 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/styles": "^4.10.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "material-table": "^1.67.1",
-    "react-google-charts": "^3.0.15",
-    "@material-ui/lab": "^4.0.0-alpha.56",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-google-charts": "^3.0.15"
   },
   "scripts": {
     "start": "react-scripts start",
