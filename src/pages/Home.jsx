@@ -127,8 +127,9 @@ Setorig([...result])
         <p> Total Number Of Form 1 Students: </p>
       </div>
       
-      <div>
+      <div className="AttendanceWrapper">
 
+      <div>
       <div className="AttendanceBox">
       <div className = "NumOfCalls">
         Number of Roll Calls: {history.length}
@@ -142,8 +143,10 @@ Setorig([...result])
         ))}
       </div>
       </div>
+      </div>
 
       </div>
+
       <div className ="ChartContainer">
       <div className="ChartEntrance">
          <Snackbars/>
