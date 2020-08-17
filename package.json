@@ -33,7 +33,7 @@
     "electron": "electron",
     "electron-build": "electron-builder",
     "electron-packager": "electron-packager",
-    "build": "react-scripts build",
+    "build": "CI= react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
