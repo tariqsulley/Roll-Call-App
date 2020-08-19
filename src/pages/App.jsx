@@ -13,8 +13,8 @@ import PlayArrow from '@material-ui/icons/PlayArrow';
 import {lightGreen } from '@material-ui/core/colors';
 import MaterialUIPickers from './picker.jsx';
 import NativeSelects from './Select.jsx';
+import AlertMessage from './Alerts'
 
-  
 const theme = createMuiTheme({
     palette: {
       primary: lightGreen,
@@ -26,7 +26,6 @@ var u_list = [];
 const u_list_present = [];
 const list =  JSON.parse(localStorage.getItem('names'))
 const x = []
-//const creds = JSON.parse(localStorage.getItem('credentials'))
 
 // Checks if the current value in the input field is present 
 // in item(the database)....Matches name and class */
@@ -51,7 +50,7 @@ function Table(props){
     </span>
     <span style={{ width: '10%' }}>
     <PresentButton onClick={() => onDismiss(item.tableData.id)} className="button-inline">
-    Present
+     Present
     </PresentButton>
     </span>
     </div>
@@ -186,6 +185,7 @@ class App extends Component {
             empty: 0,
             remaining: 0,
             progress: true,
+            alert_display:false,
             present: [],
             pre: [],
             DateNTime: []   
@@ -298,9 +298,10 @@ class App extends Component {
             this.setState({
                 remaining: list.length + 1
             })
+            this.setState({alert_display: false})
             }
             else{
-                alert("WARNING!!!...There are currently no students left to undo")
+                this.setState({alert_display:true})      
             }
         }
 
@@ -404,7 +405,7 @@ class App extends Component {
 
                 <div className="OptionsBottomDone">
                 <ThemeProvider theme={theme}>
-                <Button variant={list.length === 0 ? "disabled":"contained"} color="primary" onClick={this.toggleView2} iD= "RollCallDone"
+                <Button variant={"contained"} color="primary" onClick={this.toggleView2} iD= "RollCallDone"
                 startIcon={<DoneIcon/>}>
                 Done
                 </Button>
@@ -421,6 +422,7 @@ class App extends Component {
                 </div>
                 </div>
                 
+                {this.state.alert_display === true? <AlertMessage type="warning" message="There are currently no students left to undo"/>: null}
                 <Table
                 list={list}
                 pattern={searchTerm}
@@ -462,7 +464,7 @@ class App extends Component {
                 </div>
 
                 <div className="btnContainer">
-                <Button variant="contained" 
+                <Button variant={list.length === 0 & present.length === 0 ? "disabled":"contained"}
                 color = "primary" id="Savebtn"
                 startIcon = {<SaveIcon/>} onClick={this.save}> Save </Button>
                 </div>
