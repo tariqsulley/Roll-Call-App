@@ -1,5 +1,5 @@
 {
-  "name": "Roll Call App",
+  "name": "roll-call-app",
   "version": "0.1.0",
   "private": true,
   "main": "src/start.jsx",
