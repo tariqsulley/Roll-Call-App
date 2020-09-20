@@ -1,0 +1,13 @@
+.EditFinanceBtn{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+/*
+Error: A cross-origin error was thrown. 
+React doesn't have access to the actual error object in development.
+See https://fb.me/react-crossorigin-error for more information.
+
+difference between false,null, undefined and void
+
+*/

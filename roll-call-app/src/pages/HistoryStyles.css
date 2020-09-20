@@ -1,0 +1,62 @@
+.HistoryBody{
+    background: #e6e6e6;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Completed_RollCall{
+    border: 5px solid;
+    border-radius: 10px;
+    padding: 4px 30px 20px;
+    margin: 30px 100px;
+    background: transparent;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/*
+.Completed_RollCall:hover{
+    position: relative;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: rotateY(180deg);
+    background: transparent;  
+    color: transparent;   
+}*/
+
+  
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.Absent_Present{    
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    margin: 10px;
+    overflow-y: scroll;
+    height: 200px;
+    width: 200px;
+}
+
+.NoCalls{
+    display: flex;
+    justify-content: center;
+    margin: 250px;
+}
+
+@media(max-width: 500px){
+    
+    .HistoryBody{
+        width: 60vh;
+    }
+
+}

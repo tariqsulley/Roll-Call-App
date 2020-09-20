@@ -1,0 +1,172 @@
+.SettingsBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*background: linear-gradient(40deg,rgb(3, 224, 224),rgb(126, 112, 128));*/
+}
+
+#Header{
+    text-align: center;
+}
+
+/*#type{
+    overflow: hidden;
+    margin: 0 auto;
+    border-right: 1px solid;
+    animation: typing 2.6s steps(30,end) infinite;
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+   
+}*/
+
+#type:hover{
+    background: rgba(126, 126, 128, 0.698)
+}
+
+.SettingsForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    border-radius: 5px;
+    padding: 100px;
+    box-shadow: rgb(251, 251, 251) -10px -10px 16px 0px, rgb(215, 215, 215) 10px 10px 16px 0px, rgb(251, 251, 251) 2px 2px 4px 0px inset, rgb(215, 215, 215) -2px -2px 4px 0px inset;
+    background-color: rgb(239, 239, 239);
+}
+
+.FormInput{
+    margin: 20px;   
+}
+
+#TF1{
+    margin-right:20px;
+    margin-top: 15px;
+}
+
+.Control_btns{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Apply_btn{
+    width: 200px;
+    height: 40px;
+    border-radius: 3px;
+    border:none;
+    border-radius: 9px;
+    padding: 0 0 0 0;
+    width: 500px;
+    font-weight: bold;
+    background-color: rgb(38, 251, 38);
+    box-shadow: 0 5px rgb(35, 160, 35);
+}
+
+.Apply_btn:hover{
+    transition: .4s ease-in-out;
+    background-color: rgb(38, 184, 38);
+}
+
+.Apply_btn:active{
+    box-shadow: 0 2px rgb(35, 160, 35);
+    transform: translate(0,2px);
+}
+
+.LogOut_btn{
+    width: 500px;
+    height: 40px;
+    border:none;
+    font-weight: bold;
+    padding: 2px 2px 0px 40px;
+    border-radius: 9px;
+    padding: 0 0 0 0;
+    background-color: rgb(251, 38, 38);
+    box-shadow: 0 5px rgb(225, 30, 27);
+    margin-top: 50px;
+}
+
+.LogOut_btn:hover{
+    transition: .4s ease-in-out;
+    background-color: rgb(210, 22, 21);
+}
+
+.AccountBack{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.LogOutBox{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(100, 100, 100);
+    border-radius: 10px;
+    box-shadow: -18px 14px 16px 2px grey;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.StudentViewBack{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.StudentViewBody{
+    display: flex;
+    flex-direction: column;
+    margin: 100px;
+    border-radius: 5px;
+    box-shadow: rgb(251, 251, 251) -10px -10px 16px 0px, rgb(215, 215, 215) 10px 10px 16px 0px, rgb(251, 251, 251) 2px 2px 4px 0px inset, rgb(215, 215, 215) -2px -2px 4px 0px inset;
+    background-color: rgb(239, 239, 239);
+}
+
+.ResetCalls{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.UpgradeCalls{
+    margin-bottom: 40px;
+}
+
+.StudentBtn{
+    margin-left: 20px;
+}
+
+.LogOutText{
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin-top: 1px;
+}
+
+.ExitBtn{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.HelpBack{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.HelpInfo{
+    margin-top: 20px;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(42, 42, 42);
+}

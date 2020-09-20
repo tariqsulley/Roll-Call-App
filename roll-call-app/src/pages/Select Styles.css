@@ -1,0 +1,30 @@
+.SelectionMenu{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    
+}
+
+#HouseSelect{
+    margin-right: 450px;
+}
+
+@media(max-width: 1150px){
+    #HouseSelect{
+        margin-right: 200px;
+    }
+}
+
+@media(max-width: 500px){
+
+    #HouseSelect{
+        margin-right: 5px;
+    }
+    
+    .SelectionMenu{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+  
+}

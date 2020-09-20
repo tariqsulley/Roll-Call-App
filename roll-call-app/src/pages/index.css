@@ -1,0 +1,359 @@
+/* linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)
+node_modules\electron\dist\electron.exe C:\Users\pc\my-app\RollCallApp\my-app
+const diff = Array1.filter(item => !Array2.some(i => item.objectID === i.objectID));
+function PasswordRevealer({ value }) {
+  const [shown, setShown] = React.useState(false);
+
+
+  return (
+    <div>
+      <input type={shown ? 'text' : 'password'} value={value} onChange={() => {}} />
+      <button onClick={() => setShown(!shown)}>Show/Hide</button>
+    </div>
+  );
+}
+border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+data.filter(student => student.class[0] === "3")
+
+}*/
+
+.HomePage{
+  margin: 100px;
+}
+
+#SelectionMenu{
+    display: flex;
+   justify-content: center;
+   padding: 60px 60px;
+}
+
+body {
+  color: #222;
+  background: #f4f4f4;
+  font: 400 14px CoreSans, Arial,sans-serif;
+
+}
+
+a {
+  color: #222;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+.StartBtn{
+    padding: 10px;
+    margin: 50px;
+    background-color: #03ec51;
+    border: none;
+    border-radius: 5px;
+}
+
+.StartBtn:hover{
+    background-color: #05ac3c;
+  }
+.DisabledBtn{
+  padding: 10px;
+  margin: 50px;
+  border: none;
+  border-radius: 5px;
+  opacity: 0.5;
+  user-select: none;
+}
+.DisabledBtn:hover{
+  cursor: not-allowed;
+}
+
+.HomePage{
+    text-align: center;
+}
+
+.RowCallOptions{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+    padding: 20px;
+    background: #EFEEEE;
+    border: 1px solid rgb(255,255,255,0.20);
+    border-left-color: red;
+    box-shadow: 6px 6px 16px 0 rgb(217,210,200,0.51);
+    /*box-shadow: 20px 15px 20px 0px;*/
+}
+
+.OptionsTopBtn{
+  display: relative;
+  float: left;
+}
+
+.OptionsTopSearch{
+  display: flex;
+}
+
+.OptionsBottom{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;  
+  margin-top: 55px;
+  background: #EFEEEE;
+  border: 1px solid rgb(255,255,255,0.20);
+  border-left-color: #38BB6C;
+  box-shadow: 6px 6px 16px 0 rgb(217,210,200,0.51);
+}
+
+.OptionsBottomRefresh{
+  margin: 50px;
+}
+
+.OptionsBottomDone{
+  margin: 50px;
+}
+
+.OptionsBottomUndo{
+  margin: 50px;
+}
+
+#RowCallBack{
+    position: absolute;
+    padding: 10px;
+    left: -140px;
+}
+
+#RowCallSearch{
+    position: relative;
+    right: -155%;
+    margin: 10px;
+}
+
+#Back{
+    margin: 10px;
+}
+
+
+/*
+#refresh{
+    position: absolute;
+    right: 0;
+    position: fixed;
+}*/
+
+#formSearch{
+    text-indent: 30px;
+    width: 200px;
+    height: 32px;
+    background: #fcfcfc;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+}
+
+#formSearch:focus{
+    border-color: rgb(7, 176, 255);
+}
+
+.form{
+    position: relative;
+    align-content: center;
+}
+
+.searchIcon{
+position: absolute;
+top: 15px;
+left: 400px;
+font-size: 15px;
+}
+
+.button-inline {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  background: transparent;
+  color: #03ec51;
+  cursor: pointer;
+}
+
+
+*:focus {
+  outline: none;
+}
+
+.page {
+      margin: 20px;
+}
+
+.interactions {
+      text-align: center;
+}
+
+.table {
+      margin: 20px 0;
+}
+
+.table-header {
+      display: flex;
+      line-height: 24px;
+      font-size: 16px;
+      padding: 0 10px;
+      justify-content: space-between;
+}
+
+.table-head{
+        display: flex;
+        position: fixed;
+        background: white;
+        top: 230px;
+        flex-grow: 1;
+}
+
+.table-row {
+      display: flex;
+      line-height: 24px;
+      white-space: nowrap;
+      margin: 10px 0;
+      padding: 10px;
+      background: #ffffff;
+      border: 1px solid #e3e3e3;
+}
+      
+.table-row > span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0 5px;
+}
+    
+.button-inline {
+      border-width: 0;
+      background: transparent;
+      color: inherit;
+      text-align: inherit;
+      -webkit-font-smoothing: inherit;
+      padding: 0;
+      font-size: inherit;
+      cursor: pointer;
+}
+
+.button-inline:active {
+      border-radius: 0;
+      border-bottom: 1px solid #38BB6C;
+}
+
+#ErrorHead{
+          text-align: center;
+          padding: 50px 50px;
+}
+
+.studentsleft{
+         position: fixed;
+         opacity: .7;
+         left: 0;
+         border: 1px solid blue;
+         padding: 15px 20px;
+     }
+
+.interactions{
+        padding: 100px;
+    }
+
+.Table_Footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }
+
+.status_header{
+    border: 4px solid rgb(87, 85, 83);
+    margin: 20px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+  .student_background{
+      border: 3px solid black;
+      border-radius: 9px;
+      text-align: center;
+  }
+
+.student_status{
+      display: flex;      
+  }
+
+.table-present{
+    border: 4px solid #2ECC40;
+    margin: 20px;
+    width: 50%;
+    border-radius: 9px;
+    text-align: center;
+} 
+
+.Table-absent{
+    border: 4px solid #FF4136;
+    border-radius: 9px;
+    margin: 20px;    
+    width: 50%;       
+}
+
+.btnContainer{
+    text-align: center;
+    display: grid;  
+    margin: 100px 1px;
+}
+
+.BackBtn{
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+@media (max-width: 500px) { 
+
+  #formSearch{
+       width: 150px;
+   }
+
+  .HomeOptions{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+  }
+  
+  .RowCallOptions{
+    padding: 20px;
+    border: 2px solid blue;
+    flex-direction: column;
+  }
+
+  .OptionsTopBtn{
+    margin-right: 250px;
+  }
+
+  .OptionsTopSearch{
+    margin-top: -55px;
+  }
+
+  .OptionsBottomRefresh{
+    margin: 10px;
+  }
+  
+  .OptionsBottomDone{
+    margin: 10px;
+  }
+  
+  .OptionsBottomUndo{
+    margin: 10px;/*ad barkan man in intel like wheel chair */
+  }
+
+  .student_background{
+    border: none;
+  }
+
+ }
