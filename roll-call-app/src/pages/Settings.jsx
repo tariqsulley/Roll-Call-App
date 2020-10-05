@@ -1,10 +1,8 @@
 import React,{Component} from "react";
-//import TextField from '@material-ui/core/TextField';
 import './Settings Styles.css';
 import Button from '@material-ui/core/Button';
 import ArrowBackSharpIcon from '@material-ui/icons/ArrowBackSharp';
 import ExitToApp from '@material-ui/icons/ExitToApp'
-//import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -45,7 +43,6 @@ function AlertDialogSlide(props) {
     setOpen(false)
   }
 
-  //How to include multiple functions in onclick
   return (
     <div>
       <Button variant="contained" onClick={handleClickOpen}>
@@ -83,7 +80,8 @@ class StudentView extends Component{
   constructor(props){
     super(props);
     this.state = {
-      alert: false
+      alert: false,
+      names: []
     }
     this.displayAlert = this.displayAlert.bind(this)
   }
@@ -97,21 +95,22 @@ class StudentView extends Component{
   }
 
   upgrade(){
-/*    names = JSON.parse(localStorage.getItem('names'))
+    var names = JSON.parse(localStorage.getItem('names'))
 
-    for(i of names){
-      if(i.class[0] === "2"){
-          i.class = i.class.replace("2","3")
-          }
+    for(var i = 0; i<names.length; i++){
+
+      if(names[i].class[0] === "2"){
+        names[i].class = names[i].class.replace("2","3")}
+
+      else if(names[i].class[0] === "1"){
+        names[i].class = names[i].class.replace("1","2")}
+
       else{
-          i.class = i.class.replace("1","2")}}
+        delete names[i] }}  
 
-      for(i of names){
-        if(i.class[0] === "3"){
-          names.pop(i)}}
-
-      for(var i =  0; i<names.length; i++){
-            names.shift(names[i].class[0] === "3"? names[i]:null )}   */ 
+    var filtered_names = names.filter(i=> i !== null)
+    localStorage.setItem('names', JSON.stringify(filtered_names))
+    window.location.reload()
   }
  displayAlert(){
    this.setState({
@@ -137,7 +136,7 @@ class StudentView extends Component{
         <div className = "UpgradeCalls">
           <h1> Upgrade Classes </h1>
           <div className = "StudentBtn">
-          <AlertDialogSlide title="Upgrade Students" message="By proceding, all form 3 students will be deleted from the database and students in the previous grades will have their grade level shifted up by one." buttonName="Upgrade"/> 
+          <AlertDialogSlide title="Upgrade Students" message="By proceding, all form 3 students will be deleted from the database and students in the previous grades will have their grade level shifted up by one." buttonName="Upgrade" parentMethod={this.upgrade}/> 
           </div>
         </div>
       </div>
@@ -248,7 +247,62 @@ const FAQ = ()=>{
           the phone numbers of club members.
         </Typography>
       </AccordionDetails>
-      </Accordion>    
+      </Accordion>   
+
+      <Accordion>
+        <AccordionSummary
+         expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        > 
+        <Typography> What are the terms and conditions of using this app?</Typography> 
+       </AccordionSummary>
+     <AccordionDetails>
+       <Typography>
+       
+        Copyright (c) 2020 Tariq Sulley
+
+        MIT License
+
+      Copyright (c) 2020 Tariq Sulley
+
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files (the "Software"), to deal
+      in the Software without restriction, including without limitation the rights
+      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      copies of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.    
+       </Typography>
+     </AccordionDetails>
+      </Accordion> 
+    
+      <Accordion>
+        <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        > 
+        <Typography> Who created this application and how do I contact him?</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            This application was created by Tariq Sulley. You can reach out to him 
+            by email at "tariqsulley3c@gmail.com" or on phone at "0271853220".
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      
     </div>
   )
 }
@@ -311,14 +365,10 @@ helpactions(){
     helpview: !this.state.helpview
   })
 }
+
 LogOut(){
-  /*const val = localStorage.getItem('login')*/
   localStorage.setItem('login', true)
   window.location.reload()
-}
-
-passwordChange(){
-  /*const password = localStorage.getItem('password')*/
 }
 
 existingPassword(event){
@@ -361,26 +411,6 @@ render(){
         </ListItem>
         <Divider/>
       </List>
-    {/* 
-    <div className="FormInput">
-    <h2 iD="Header">Change Username  </h2>
-    <TextField iD = "TF1" variant ="outlined" label ="Existing Username"/>
-    <TextField iD ="TF1" variant ="outlined" label ="New UserName"/>
-    <TextField iD = "TF1" variant ="outlined" label = "Confirm New Username"/>
-    </div>
-
-    <div className="FormInput">
-    <h2 iD="Header"> Change Password </h2>
-    <TextField iD = "TF1" variant ="outlined" label ="Existing passsword"  value={this.state.password} onChange={this.existingPassword} type="password"/>
-    <TextField iD = "TF1" variant ="outlined" label ="New Password" type ="password"/>
-    <TextField iD = "TF1" variant ="outlined" label ="Confirm New Password" type="password"/>
-    </div>  
-
-    <div className ="Control_btns">
-    <button  className="Apply_btn"> Apply Changes </button>
-    <button className="LogOut_btn" onClick={this.LogOut}> Log Out </button>
-    </div>
-    */}
    
     </div>
     </div>
